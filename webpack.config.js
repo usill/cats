@@ -11,7 +11,10 @@ module.exports = (env, argv) => {
   distPath = path.resolve(__dirname, './dist/');
 
   return result = {
-    entry: path.resolve(srcPath, 'index.js'),
+    entry: {
+      index: path.resolve(srcPath, 'index.js'),
+      catalog: path.resolve(srcPath, 'catalog.js')
+    },
     output: {
       filename: "index.js",
       path: distPath,
@@ -45,27 +48,27 @@ module.exports = (env, argv) => {
           ],
         },
         {
-          test: /\.(png|jp(e*)g|svg|gif)$/,
+          test: /\.(png|jp(e*)g|gif)$/,
+
           use: [
             {
               loader: "file-loader",
-              options: {
-                name: "images/assets/[hash]-[name].[ext]",
-              },
-            },
-          ],
-        },
-        {
-          test: /\.(png|jpe?g|gif|webp)(\?.*)?$/,
-          exclude: /(node_modules)/,
-          use: [
-            {
-              loader: "url-loader",
               options: {
                 name: "assets/images/[name].[ext]",
               },
             },
           ],
+        },
+        {
+          test: /\.svg/,
+          use: [
+            {
+              loader: "file-loader",
+              options: {
+                name: "assets/images/icons/[name].[ext]",
+              },
+            }
+          ]
         }
       ],
     },
@@ -79,6 +82,18 @@ module.exports = (env, argv) => {
             collapseBooleanAttributes: true,
             removeScriptTypeAttributes: true,
           },
+        chunks: ['index'],
+      }),
+      new HtmlWebpackPlugin({
+        template: path.resolve(srcPath, 'catalog.html'),
+        minify: isDev ? false : {
+            removeComments: true,
+            collapseWhitespace: true,
+            removeAttributeQuotes: true,
+            collapseBooleanAttributes: true,
+            removeScriptTypeAttributes: true,
+          },
+        chunks: ['catalog'],
       }),
       new MiniCssExtractPlugin(),
       new CleanPlugin.CleanWebpackPlugin(),
