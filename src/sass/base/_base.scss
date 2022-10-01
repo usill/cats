@@ -1,0 +1,46 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+
+
+:root {
+  --bigest-fotn-size: 60px;
+  --big-font-size: 36px;
+  --normal-font-size: 20px;
+  --small-font-size: 16px;
+  --smallest-font-size: 14px;
+}
+
+body {
+  font-family: 'Oswald', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.center {
+  max-width: 1200px;
+  margin: auto;
+}
+
+@media (max-width: 678px) {
+  :root {
+    --bigest-fotn-size: 36px;
+    --big-font-size: 24px;
+    --normal-font-size: 16px;
+    --small-font-size: 14px;
+    --smallest-font-size: 12px;
+  }
+}

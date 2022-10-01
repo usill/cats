@@ -1,0 +1,112 @@
+.example {
+}
+.example__title {
+  margin-top: 70px;
+  padding-bottom: 75px;
+  font-size: var(--bigest-fotn-size);
+}
+.example__content {
+  margin-top: 75px;
+  width: 36%;
+}
+
+.exambpe__bg {
+  background-color: #F2F2F2;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  left: 0;
+}
+
+.example__text {
+  line-height: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.example__receipt {
+  margin-top: 70px;
+  display: flex;
+  justify-content: space-between;
+}
+.example__plus {
+  text-align: center;
+  width: 45%;
+  padding: 15px 0 20px 0;
+  border: solid 1px #CDCDCD;
+  position: relative;
+}
+.example__plus_data {
+  line-height: 37px;
+  font-size: var(--big-font-size);
+}
+.example__plus_text {
+  width: max-content;
+  position: absolute;
+  bottom: -7px; // --smallest-font-size - 1/2;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #F2F2F2;
+  padding: 0 7px;
+  box-sizing: content-box;
+  font-size: var(--smallest-font-size);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.example__price {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--normal-font-size);
+}
+
+@media (max-width: 1022px) {
+  .example__title {
+    margin-top: 63px;
+  }
+  .example {
+    padding: 30px;
+  }
+  .example__content {
+    width: 100%;
+  }
+  .example__receipt {
+    width: 50%;
+    margin-top: 0;
+  }
+  .example__position {
+    margin-top: 54px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .example__price {
+    margin-top: 0;
+    display: block;
+  }
+  .exambpe__bg {
+    height: 120%;
+  }
+
+}
+
+@media (max-width: 678px) {
+  .example__content {
+    margin-top: 33px;
+  }
+  .example {
+    padding: 20px;
+  }
+  .example__receipt {
+    width: 100%;
+    margin-top: 0;
+  }
+  .example__position {
+    margin-top: 25px;
+    flex-direction: column;
+  }
+  .example__price {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+}

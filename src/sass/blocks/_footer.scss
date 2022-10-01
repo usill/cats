@@ -1,0 +1,156 @@
+.footer {
+  width: 100%;
+  margin-top: 75px;
+}
+.footer__map {
+  
+}
+.footer__img {
+  position: absolute;
+  max-width: 1440px;
+  height: 400px;
+  z-index: -1;
+  object-fit: fill;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.footer__info {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.footer__block {
+  width: 570px;
+  height: 201px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.footer__title {
+  width: 25%;
+  font-size: var(--normal-font-size);
+  font-family: 'Oswald', sans-serif;
+}
+
+.footer__adres {
+  width: 25%;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 20px;
+}
+
+.footer__pin {
+  position: absolute;
+  top: 32%;
+  right: 25%;
+}
+
+.footer__elements {
+  padding: 60px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social:not(.social:nth-child(1)) {
+  margin-left: 20px;
+}
+
+.footer__link {
+  display: flex;
+  align-items: center;
+}
+
+.footer__academy {
+  margin-right: 22px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 18.4px;
+  color: #444444;
+}
+
+.footer__logo {
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+.social {
+  fill: #fff;
+  &:hover {
+    stroke: #68B738;
+  }
+}
+
+@media (max-width: 1022px) {
+  .footer {
+    margin-top: 700px;
+  }
+  .footer__block {
+    width: 100%;
+    position: absolute;
+    top: -1px;
+    justify-content: space-around;
+  }
+  .footer__pin {
+    left: 50%;
+    top: 170%;
+    transform: translateX(-50%);
+  }
+  .footer__info{
+    height: 201px;
+  }
+  .footer__img {
+    position: absolute;
+    top: 201px;
+  }
+  .footer__map {
+    position: relative;
+  }
+  .footer__elements {
+    margin-top: 400px;
+  }
+}
+
+@media (max-width: 678px) {
+  .footer__title {
+    width: 40%;
+  }
+  
+  .footer__adres {
+    width: 40%;
+  }
+
+  .footer {
+    margin-top: 600px;
+  }
+
+  .footer__elements {
+    flex-direction: column;
+  }
+  .footer__social, .footer__link, .footer__figure {
+    display: flex;
+    justify-content: center;
+  }
+  .footer__social {
+    padding: 28px 0;
+    margin: 0 20px;
+    border-top: solid 1px #D9D9D9;
+    border-bottom: solid 1px #D9D9D9;
+  }
+  .footer__figure {
+    padding-bottom: 28px;
+  } 
+  .footer__link {
+    padding-top: 28px;
+  }
+  .footer__block {
+    background-color: #F2F2F2;
+  }
+}
